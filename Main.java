@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,7 +15,8 @@ public class Main {
             choice = keyboard.nextLine();
         }
 
-        String myChoice = "";
+        String myChoice;
+        String javaChoice;
         if (choice.equals("R")){
             myChoice = "Rock";}
         else if (choice.equals("P")){
@@ -25,7 +25,15 @@ public class Main {
 
 
         System.out.println("You have chosen: " + myChoice);
-        Random javaChoice = new Random(3);
+        Random javaRandom = new Random();
+        int random = javaRandom.nextInt(3);
+        if (random == 0){javaChoice = "Rock";}
+        else if (random == 1){javaChoice = "Paper";}
+        else {javaChoice = "Scissors";}
         System.out.println("JAVA has chosen: " + javaChoice);
+
+        if (myChoice.equals(javaChoice)){
+            System.out.println("It's a DRAW!!!");
+        }
     }
 }

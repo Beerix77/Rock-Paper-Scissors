@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Main {
 
-
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("*** Welcome to (R)OCK, (P)APER, (S)CISSORS !!! ***");
@@ -17,23 +16,35 @@ public class Main {
 
         String myChoice;
         String javaChoice;
-        if (choice.equals("R")){
-            myChoice = "Rock";}
-        else if (choice.equals("P")){
-            myChoice = "Paper";}
-        else {myChoice = "Scissors";}
+        if (choice.equals("R")) {
+            myChoice = "Rock";
+        } else if (choice.equals("P")) {
+            myChoice = "Paper";
+        } else {
+            myChoice = "Scissors";
+        }
 
 
         System.out.println("You have chosen: " + myChoice);
         Random javaRandom = new Random();
         int random = javaRandom.nextInt(3);
-        if (random == 0){javaChoice = "Rock";}
-        else if (random == 1){javaChoice = "Paper";}
-        else {javaChoice = "Scissors";}
+        if (random == 0) {
+            javaChoice = "Rock";
+        } else if (random == 1) {
+            javaChoice = "Paper";
+        } else {
+            javaChoice = "Scissors";
+        }
         System.out.println("JAVA has chosen: " + javaChoice);
 
-        if (myChoice.equals(javaChoice)){
+        if (myChoice.equals(javaChoice)) {
             System.out.println("It's a DRAW!!!");
+        }
+        if ((choice.equals("R") && javaChoice.equals("Scissors")) || (choice.equals("P") && javaChoice.equals("Rock"))
+                || (choice.equals("S") && javaChoice.equals("Paper"))) {
+            System.out.println("YOU WIN!!!!");
+        } else if(!myChoice.equals(javaChoice)){
+            System.out.println("You LOSE :(");
         }
     }
 }
